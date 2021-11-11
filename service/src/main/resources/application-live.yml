@@ -4,5 +4,5 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://realmeet-db.cql1m87a4klv.sa-east-1.rds.amazonaws.com:3306/realmeet
+    url: jdbc:mysql://realmeet-db.cql1m87a4klv.sa-east-1.rds.amazonaws.com:3306/realmeet?&serverTimezone=UTC&useSSL=false
     username: admin
