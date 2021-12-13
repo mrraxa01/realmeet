@@ -28,9 +28,9 @@ class RoomApiIntegrationTest extends BaseIntegrationTest {
         var room = newRoomBuilder().build();
         roomRepository.saveAndFlush(room);
 
-        // verifica se o id não é nulo
+
         assertNotNull(room.getId());
-        //verifica se a room está ativa
+
         assertTrue(room.getActive());
 
         var dto = api.getRoom(DEFAULT_ROOM_ID);
