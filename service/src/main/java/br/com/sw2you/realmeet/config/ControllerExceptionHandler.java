@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(RoomNotFoundException.class)
-    public ResponseEntity<Object> handleNotFoundExpecion(Exception exception) {
+    public ResponseEntity<Object> handleNotFoundException(Exception exception) {
         return buildResponseEntity(HttpStatus.NOT_FOUND, exception);
     }
 
