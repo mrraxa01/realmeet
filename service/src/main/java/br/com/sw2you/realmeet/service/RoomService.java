@@ -24,8 +24,7 @@ public class RoomService {
         Room room = roomRepository
             .findByIdAndActive(id, true)
             .orElseThrow(() -> new RoomNotFoundException("ROOM NOT FOUND: " + id));
-        //return new RoomDTO().name(room.getName()).id(room.getId()).seats(room.getSeats());
-        //com o mapstruct o código acima fica desnecessário
+
         return roomMapper.fromEntityToDto(room);
     }
 }

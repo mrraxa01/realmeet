@@ -23,14 +23,7 @@ public class RoomController implements RoomsApi {
 
     @Override
     public CompletableFuture<ResponseEntity<RoomDTO>> getRoom(Long id) {
-        // return CompletableFuture.supplyAsync(() -> ResponseEntity.ok(roomService.getRoom(id)));
 
-        // return supplyAsync(()-> roomService.getRoom(id), controllerExecutor).thenApply(r -> ResponseEntity.ok(r));
-
-        // o código acima vai executar assincronamente "supplyAsync" o getRoom através da thread do controllerExecutor
-        // quando acabar a execução será retornado uma room 'r' (r é aleatório)  'thenApply' faz esperar,
-        // r será retornado dentro do response entity
-        //abaixo o código refatorado com reference methods
         return supplyAsync(() -> roomService.getRoom(id), controllerExecutor).thenApply(ResponseEntityUtils::ok);
     }
 }
