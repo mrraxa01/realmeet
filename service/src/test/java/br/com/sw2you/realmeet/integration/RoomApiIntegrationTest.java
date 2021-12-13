@@ -28,7 +28,6 @@ class RoomApiIntegrationTest extends BaseIntegrationTest {
         var room = newRoomBuilder().build();
         roomRepository.saveAndFlush(room);
 
-
         assertNotNull(room.getId());
 
         assertTrue(room.getActive());
